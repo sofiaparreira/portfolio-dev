@@ -34,11 +34,11 @@ const CardProject: React.FC<CardProjectProps> = ({
           {description}
         </p>
         
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-3">
           {technologies.map((tech, index) => (
             <span
               key={index}
-              className="px-3 py-1 bg-yellow-600/20 text-yellow-500 text-xs font-medium rounded-full border border-yellow-600/30"
+              className="  text-yellow-500 text-xs font-medium rounded-full"
             >
               {tech}
             </span>

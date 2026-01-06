@@ -6,19 +6,19 @@
   z-index: 1000;
   
   /* Glassmorphism effect */
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(57, 57, 57, 0.40);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 500px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   
-  padding: 10px 20px;
+  padding: 16px 20px;
 }
 
 .navList {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -34,7 +34,7 @@
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
-  padding: 8px 16px;
+  padding: 0px 0px;
   border-radius: 8px;
   transition: all 0.3s ease;
   display: block;
@@ -70,12 +70,13 @@
     left: 10px;
     right: 10px;
     transform: none;
-    padding: 8px 16px;
+    padding: 8px 6px;
+    width: fit-content;
+    margin: auto;
   }
   
   .navList {
-    gap: 16px;
-    justify-content: space-between;
+    gap: 8px;
   }
   
   .navLink {
