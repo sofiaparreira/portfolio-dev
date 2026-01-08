@@ -18,11 +18,11 @@ const CardProject: React.FC<CardProjectProps> = ({
   linkDeploy
 }) => {
   return (
-    <div className="max-w-sm rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 backdrop-blur-xl border border-white/10 hover:border-yellow-600/30 transition-all duration-300 group">
+    <div className="max-w-sm rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 backdrop-blur-xl border border-white/10 hover:border-yellow-600/30 transition-all duration-300 group w-full">
       <img 
         src={imageSrc} 
         alt={title}
-        className="w-full h-48 object-cover"
+        className="w-full h-48 object-cover object-top"
       />
       
       <div className="p-6">
@@ -52,7 +52,7 @@ const CardProject: React.FC<CardProjectProps> = ({
                 href={linkRepository}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-yellow-600/10 border border-yellow-600/30 text-yellow-500 rounded-lg px-4 py-2 text-xs font-medium hover:bg-yellow-600/20 transition-colors text-center"
+                className="flex-1 bg-yellow-600/10 border border-yellow-600/30 text-yellow-500 rounded-full px-4 py-2 text-xs font-medium hover:bg-yellow-600/20 transition-colors text-center"
               >
                 Repository
               </a>
@@ -62,7 +62,7 @@ const CardProject: React.FC<CardProjectProps> = ({
                 href={linkDeploy}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-yellow-600 text-white rounded-lg px-4 py-2 text-xs font-medium hover:bg-yellow-700 transition-colors text-center"
+                className="flex-1 bg-yellow-600 text-white rounded-full px-4 py-2 text-xs font-medium hover:bg-yellow-700 transition-colors text-center"
               >
                 View Live
               </a>
