@@ -18,11 +18,11 @@ const CardProject: React.FC<CardProjectProps> = ({
   linkDeploy
 }) => {
   return (
-    <div className="max-w-sm rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 backdrop-blur-xl border border-white/10 hover:border-yellow-600/30 transition-all duration-300 group w-full">
+    <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 backdrop-blur-xl border border-white/10 hover:border-yellow-600/30 transition-all duration-300 group w-full">
       <img 
         src={imageSrc} 
         alt={title}
-        className="w-full h-48 object-cover object-top"
+        className="w-full h-56 object-cover object-top"
       />
       
       <div className="p-6">

@@ -11,6 +11,8 @@ import Title from './components/Title';
 import CardSkills from './components/CardSkills';
 import { useState } from 'react';
 import CardProject from './components/CardProject';
+import { FaEnvelope, FaPhone } from 'react-icons/fa';
+import Link from 'next/link';
 interface Trail {
   x: string;
   y: string;
@@ -117,10 +119,10 @@ export default function Home() {
     {
       company: 'Meu Apê Certo',
       role: 'Desenvolvedora Front-End',
-      contractType: 'Contrato de Projeto',
+      contractType: 'Projeto Freelancer',
       duration: 'Jan 2025 - o momento',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, deserunt numquam?',
+        ' Desenvolvimento de sistema web para imobiliária utilizando Next.js, TypeScript e Tailwind CSS, com integração a APIs REST e versionamento via Git. Implementação de funcionalidades CRUD para empreendimentos e imóveis, com sessões diferenciadas para clientes, incorporadoras e administradores. Desenvolvimento de filtros avançados para pesquisa de imóveis com ranking, solicitação e fluxo completo de análise de crédito e financiamento imobiliário. Construção de dashboards interativos com estatísticas de imóveis, empreendimentos e leads de usuários, gerenciamento de planos e pagamentos, gerenciamento de usuários, responsividade do site completo, entre outros. Responsável também por parte do web design do sistema.',
     },
     {
       company: 'Simetria Brasil (Aquarium Tech)',
@@ -128,15 +130,15 @@ export default function Home() {
       contractType: 'CLT',
       duration: 'Novembro 2025 - Janeiro 2026',
       description:
-        'Reiciendis laboriosam suscipit, facilis accusantium maiores sed unde illo.',
+        'Desenvolvimento de várias landing pages internas para a própria empresa e geração de leeds, e externa para clientes que contratam os serviços da empresa. Utilização de HTML, CSS, JavaScript e Boostrap para construção de todas as páginas.',
     },
     {
       company: 'WorkGeo',
-      role: 'Desenvolvedora Front-End',
+      role: 'Desenvolvedora Full Stack',
       contractType: 'Estágio',
       duration: 'Jun 2024 - Mar 2025',
       description:
-        'Reiciendis laboriosam suscipit, facilis accusantium maiores sed unde illo.',
+        'Desenvolvimento do site institucional da empresa, criação de soluções de software para otimização de processosinternos da empresa, desenvolvimento de uma agenda web para gestão de atividades e eventos da empresa.',
     },
     {
       company: 'Info Brasil Express',
@@ -144,7 +146,7 @@ export default function Home() {
       contractType: 'Estágio',
       duration: 'Jan 2024 - Jun 2024',
       description:
-        'Reiciendis laboriosam suscipit, facilis accusantium maiores sed unde illo.',
+        'Técnica de suporte em TI, responsável pela manutenção de computadores, instalação e configuração de softwares, atendimento ao cliente, suporte remoto e vendas.',
     },
   ];
 
@@ -217,19 +219,89 @@ export default function Home() {
               numquam? Reiciendis laboriosam suscipit, facilis accusantium maiores sed unde illo assumenda
               labore totam ad quo provident quidem, quos minima numquam.
             </p>
-            <div className="flex gap-3">
-              <a href="" title='Link WhatsApp'>(31) 99905-0065</a>
-              <a href="" title='Link Email'>sofiapparreira@gmail.com</a>
+            <div className="flex flex-col sm:flex-row gap-6 mt-6">
+              <a
+                href="https://wa.me/5531999050065"
+                title="Link WhatsApp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+      group inline-flex items-center gap-3
+      text-white/80
+      transition-all duration-300
+      hover:text-yellow-500
+    "
+              >
+                <span className="
+      flex items-center justify-center
+      w-9 h-9 rounded-full
+      bg-yellow-600/10 border border-yellow-600/20
+      transition-all duration-300
+      group-hover:bg-yellow-600
+      group-hover:text-black
+      group-hover:rotate-12
+    ">
+                  <FaPhone className="rotate-90 text-sm" />
+                </span>
+
+                <span className="relative">
+                  (31) 99905-0065
+                  <span className="
+        absolute left-0 -bottom-1
+        w-0 h-[2px]
+        bg-yellow-600
+        transition-all duration-300
+        group-hover:w-full
+      " />
+                </span>
+              </a>
+
+              <a
+                href="mailto:sofiapparreira@gmail.com"
+                title="Link Email"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+      group inline-flex items-center gap-3
+      text-white/80
+      transition-all duration-300
+      hover:text-yellow-500
+    "
+              >
+                <span className="
+      flex items-center justify-center
+      w-9 h-9 rounded-full
+      bg-yellow-600/10 border border-yellow-600/20
+      transition-all duration-300
+      group-hover:bg-yellow-600
+      group-hover:text-black
+      group-hover:-rotate-6
+    ">
+                  <FaEnvelope className="text-sm" />
+                </span>
+
+                <span className="relative">
+                  sofiapparreira@gmail.com
+                  <span className="
+        absolute left-0 -bottom-1
+        w-0 h-[2px]
+        bg-yellow-600
+        transition-all duration-300
+        group-hover:w-full
+      " />
+                </span>
+              </a>
             </div>
 
+
             <div className="flex mt-8 gap-3">
-              <button className="bg-yellow-600 text-white rounded-full px-8 py-2.5 text-sm font-medium
+              <Link href={'/curriculo_sofia_passos.pdf'} target='_blank' className="bg-yellow-600 text-white rounded-full px-8 py-2.5 text-sm font-medium
                   hover:bg-yellow-700 transition-colors
                   shadow-[0_0_40px_rgba(250,204,21,0.25)] cursor-pointer flex items-center gap-2">
                 Currículo
                 <HiOutlineDownload className='text-xl' />
 
-              </button>
+              </Link>
               <button className='border border-yellow-600/20 text-[#eebe39] bg-yellow-600/10 rounded-full px-8 py-2.5 text-sm font-medium flex gap-2 items-center'>Ver Projetos <AiFillCode className='text-xl' />
               </button>
 
@@ -381,21 +453,23 @@ export default function Home() {
 
       <section className='container mx-auto py-16'>
         <Title title='Projetos' />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <CardProject
+              key={index}
+              title={project.title}
+              description={project.description}
+              imageSrc={project.imageSrc}
+              technologies={project.technologies}
+              linkRepository={project.linkRepository}
+              linkDeploy={project.linkDeploy}
+            />
+          ))}
+        </div>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-        {projects.map((project, index) => (
-          <CardProject
-            key={index}
-            title={project.title}
-            description={project.description}
-            imageSrc={project.imageSrc}
-            technologies={project.technologies}
-            linkRepository={project.linkRepository}
-            linkDeploy={project.linkDeploy}
-          />
-        ))}
-      </div>
+
       <div className="fixed bottom-8 left-8 flex flex-col gap-4 z-50">
         <a
           href="https://www.linkedin.com/in/sofia-passos-51265b259/"
