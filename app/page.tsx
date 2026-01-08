@@ -186,12 +186,12 @@ export default function Home() {
     <main className="">
       <Navbar />
 
-      <section
+      <section id='inicio'
         ref={sectionRef}
         className="relative overflow-hidden h-screen flex flex-col items-center justify-center"
       >
 
-        {/* Brilho principal */}
+        {/* Brilho */}
         <div
           style={{
             content: '',
@@ -303,8 +303,8 @@ export default function Home() {
                 <HiOutlineDownload className='text-xl' />
 
               </Link>
-              <button className='border border-yellow-600/20 text-[#eebe39] bg-yellow-600/10 rounded-full px-8 py-2.5 text-sm font-medium flex gap-2 items-center'>Ver Projetos <AiFillCode className='text-xl' />
-              </button>
+              <Link href={'#projetos'} className='border border-yellow-600/20 text-[#eebe39] bg-yellow-600/10 rounded-full px-8 py-2.5 text-sm font-medium flex gap-2 items-center'>Ver Projetos <AiFillCode className='text-xl' />
+              </Link>
 
             </div>
           </div>
@@ -320,7 +320,7 @@ export default function Home() {
       </section>
 
       {/* --- HABILIDADES --- */}
-      <section className="relative container mx-auto md:py-16 py-8 px-4">
+      <section id='habilidades' className="relative container mx-auto md:py-16 py-8 px-4">
 
 
         <div className="relative z-10">
@@ -400,7 +400,7 @@ export default function Home() {
 
       {/* ----- EXPERIENCIAS PROFISSIONAIS ----- */}
 
-      <section className="container mx-auto md:py-16 py-8 px-4">
+      <section id='experiencias' className="container mx-auto md:py-16 py-8 px-4">
         <Title title="Experiências Profissionais" />
 
         <div className="flex max-md:flex-col md:gap-16 gap-8 mt-10">
@@ -452,7 +452,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='container mx-auto py-16'>
+      <section id='projetos' className='container mx-auto py-16'>
         <Title title='Projetos' />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

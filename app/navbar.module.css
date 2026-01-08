@@ -5,11 +5,10 @@
   transform: translateX(-50%);
   z-index: 1000;
   
-  /* Glassmorphism effect */
-  background: rgba(57, 57, 57, 0.40);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(36, 36, 36, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(221, 221, 221, 0.1);
   border-radius: 500px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   
@@ -73,6 +72,8 @@
     padding: 8px 6px;
     width: fit-content;
     margin: auto;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
   
   .navList {
