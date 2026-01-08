@@ -162,20 +162,28 @@ export default function Home() {
     {
       title: "Axyun Capital",
       description: "Site institucional para empresa de investimentos Axyun Capital. Projeto desenvolvido por mim utilizando HTML, CSS, JavaScript e Bootstrap.",
-      imageSrc: "/projects/axyun.png",
+      imageSrc: "/projects/axyun.jpg",
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       linkDeploy: "https://axyuncapital.com.br",
     },
     {
       title: "Kanban",
       description: "Fiz um sistema de gerenciamento de tarefas no estilo Kanban.",
-      imageSrc: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop",
+      imageSrc: "/projects/kanban.jpg",
       technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-      linkDeploy: "https://kanban-demo.netlify.app"
+      linkDeploy: "https://kanban-chi-nine.vercel.app",
+      linkRepository: "https://github.com/sofiaparreira/Kanban"
+    },
+    {
+      title: "Logística de Transporte por drones",
+      description: "Projeto desenvolvido para um processo seletivo, no qual criei uma solução de logística de transporte utilizando drones. O sistema tem voo em tempo real, entrega de pacotes, gestão de drones, otimização de rotas e simuação de bateria. Fui responsável pelo Back-End e Front-End.",
+      imageSrc: "/projects/drone.png",
+      technologies: ["React", "CSS", "JavaScript", "Tailwind"],
+      linkRepository: "https://github.com/sofiaparreira/api-encomendas-drone",
     },
     {
       title: "Animação Shell Sort",
-      description: "Animação criado para um trabalho acadêmico sobre o método de ordenação Shell Sort.",
+      description: "Animação desenvolvida para um trabalho acadêmico, com o objetivo de demonstrar visualmente o funcionamento do método de ordenação Shell Sort, facilitando o entendimento do algoritmo e suas etapas.",
       imageSrc: "/projects/shellsort.jpg",
       technologies: ["HTML", "CSS", "JavaScript", "Tailwind"],
       linkRepository: "https://github.com/sofiaparreira/visualizador-shellsort",
