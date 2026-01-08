@@ -110,7 +110,7 @@ export default function Home() {
 
   const skillsOthers = [
     { image: '/skills/oracle.svg', skillName: 'Oracle' },
-    { image: '/skills/next.svg', skillName: 'Next JS' },
+    { image: '/skills/figma.png', skillName: 'Figma' },
 
   ]
 
@@ -154,7 +154,7 @@ export default function Home() {
   const projects = [
     {
       title: "Meu Apê Certo",
-      description: "Sistema de imobiliária na qual ui responsável pelo front-end e parte do web design, com dashboards e funcionalidades para administradores, incorporadoras e clientes.",
+      description: "Sistema de imobiliária na qual fui responsável pelo front-end e parte do web design, com dashboards e funcionalidades para administradores, incorporadoras e clientes.",
       imageSrc: "/projects/meuape.png",
       technologies: ["Next JS", "TypeScript", "Tailwind"],
       linkDeploy: "https://app.meuapecerto.com.br"
@@ -174,11 +174,12 @@ export default function Home() {
       linkDeploy: "https://kanban-demo.netlify.app"
     },
     {
-      title: "Weather Dashboard",
-      description: "Real-time weather data visualization with forecasts and alerts.",
-      imageSrc: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400&h=300&fit=crop",
-      technologies: ["TypeScript", "React", "Chart.js", "API"],
-      linkRepository: ""
+      title: "Animação Shell Sort",
+      description: "Animação criado para um trabalho acadêmico sobre o método de ordenação Shell Sort.",
+      imageSrc: "/projects/shellsort.jpg",
+      technologies: ["HTML", "CSS", "JavaScript", "Tailwind"],
+      linkRepository: "https://github.com/sofiaparreira/visualizador-shellsort",
+      linkDeploy: "https://visualizador-shellsort.vercel.app"
     }
   ];
   return (

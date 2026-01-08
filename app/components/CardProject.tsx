@@ -54,7 +54,7 @@ const CardProject: React.FC<CardProjectProps> = ({
                 rel="noopener noreferrer"
                 className="flex-1 bg-yellow-600/10 border border-yellow-600/30 text-yellow-500 rounded-full px-4 py-2 text-xs font-medium hover:bg-yellow-600/20 transition-colors text-center"
               >
-                Repository
+                Repositório
               </a>
             )}
             {linkDeploy && (
@@ -64,7 +64,7 @@ const CardProject: React.FC<CardProjectProps> = ({
                 rel="noopener noreferrer"
                 className="flex-1 bg-yellow-600 text-white rounded-full px-4 py-2 text-xs font-medium hover:bg-yellow-700 transition-colors text-center"
               >
-                View Live
+                Ver Site
               </a>
             )}
           </div>
