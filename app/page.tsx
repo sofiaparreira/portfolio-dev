@@ -214,12 +214,11 @@ export default function Home() {
             <h2 className="uppercase text-sm font-medium">Desenvolvedora Full Stack</h2>
             <div className="flex gap-3"></div>
             <p className="text-sm mt-8">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus doloremque atque sed repellendus?
-              Provident ab facilis ut similique quos, enim adipisci eligendi dolor culpa? Impedit nulla fuga
-              adipisci doloribus ea. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, deserunt
-              numquam? Reiciendis laboriosam suscipit, facilis accusantium maiores sed unde illo assumenda
-              labore totam ad quo provident quidem, quos minima numquam.
+              Sou desenvolvedora Full Stack com foco em Front-end, com 2 anos de experiência em desenvolvimento web.
+              Busco oportunidades como desenvolvedora júnior Front-end ou Back-end, ou estágios.
+              Sou formada no ensino médio técnico pelo COTEMIG e atualmente curso o 4º período de Ciências da Computação na mesma instituição.
             </p>
+
             <div className="flex flex-col sm:flex-row gap-6 mt-6">
               <a
                 href="https://wa.me/5531999050065"
