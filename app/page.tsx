@@ -90,6 +90,8 @@ export default function Home() {
   const skillsFront = [
     { image: '/skills/next.svg', skillName: 'Next JS' },
     { image: '/skills/react.svg', skillName: 'React JS' },
+        { image: '/skills/react.svg', skillName: 'React Native' },
+
     { image: '/skills/vite.svg', skillName: 'Vite' },
     { image: '/skills/angular.svg', skillName: 'Angular' },
 
@@ -159,13 +161,7 @@ export default function Home() {
       technologies: ["Next JS", "TypeScript", "Tailwind"],
       linkDeploy: "https://app.meuapecerto.com.br"
     },
-    {
-      title: "Axyun Capital",
-      description: "Site institucional para empresa de investimentos Axyun Capital. Projeto desenvolvido por mim utilizando HTML, CSS, JavaScript e Bootstrap.",
-      imageSrc: "/projects/axyun.jpg",
-      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-      linkDeploy: "https://axyuncapital.com.br",
-    },
+    
     {
       title: "Kanban",
       description: "Fiz um sistema de gerenciamento de tarefas no estilo Kanban.",
@@ -182,13 +178,27 @@ export default function Home() {
       linkRepository: "https://github.com/sofiaparreira/api-encomendas-drone",
     },
     {
+      title: "Fokus",
+      description: "Aplicativo desenvolvido em um curso da Alura. O Fokus é um aplicativo de foco e produtividade com método pomodoro.",
+      imageSrc: "/projects/fokus.png",
+      technologies: ["React Native", "StyleSheet", "JavaScript", "Expo"],
+      linkRepository: "https://github.com/sofiaparreira/app-fokus",
+    },
+    {
       title: "Animação Shell Sort",
       description: "Animação desenvolvida para um trabalho acadêmico, com o objetivo de demonstrar visualmente o funcionamento do método de ordenação Shell Sort, facilitando o entendimento do algoritmo e suas etapas.",
       imageSrc: "/projects/shellsort.jpg",
       technologies: ["HTML", "CSS", "JavaScript", "Tailwind"],
       linkRepository: "https://github.com/sofiaparreira/visualizador-shellsort",
       linkDeploy: "https://visualizador-shellsort.vercel.app"
-    }
+    },
+    {
+      title: "Axyun Capital",
+      description: "Site institucional para empresa de investimentos Axyun Capital. Projeto desenvolvido por mim utilizando HTML, CSS, JavaScript e Bootstrap.",
+      imageSrc: "/projects/axyun.jpg",
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      linkDeploy: "https://axyuncapital.com.br",
+    },
   ];
   return (
     <main className="">
