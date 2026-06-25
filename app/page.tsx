@@ -42,20 +42,20 @@ export default function Home() {
   const [selectedExperience, setSelectedExperience] = useState(0);
   const experiences = [
     {
+      company: "Denakop",
+      role: "Desenvolvedora Web",
+      contractType: "PJ",
+      duration: "Março 2026 - o momento",
+      description:
+        "Atuo no desenvolvimento e manutenção do dashboard interno da empresa utilizando React, TypeScript e Laravel, participando da criação de novas funcionalidades, correção de bugs e evolução contínua da plataforma. Também sou responsável pela implementação de melhorias na tag proprietária de publicidade em JavaScript, com foco em performance, SEO e otimização da monetização de anúncios. Além disso, realizo o gerenciamento e a implementação de formatos publicitários em sites de publishers por meio do script da empresa. Paralelamente, desenvolvo ferramentas e aplicações internas voltadas para automação de processos e otimização de tarefas operacionais, contribuindo para o aumento da produtividade e redução de atividades manuais.",
+    },
+    {
       company: "Meu Apê Certo",
       role: "Desenvolvedora Front-End",
       contractType: "Projeto Freelancer",
       duration: "Jan 2025 - o momento",
       description:
         " Desenvolvimento de sistema web para imobiliária utilizando Next.js, TypeScript e Tailwind CSS, com integração a APIs REST e versionamento via Git. Implementação de funcionalidades CRUD para empreendimentos e imóveis, com sessões diferenciadas para clientes, incorporadoras e administradores. Desenvolvimento de filtros avançados para pesquisa de imóveis com ranking, solicitação e fluxo completo de análise de crédito e financiamento imobiliário. Construção de dashboards interativos com estatísticas de imóveis, empreendimentos e leads de usuários, gerenciamento de planos e pagamentos, gerenciamento de usuários, responsividade do site completo, entre outros. Responsável também por parte do web design do sistema.",
-    },
-    {
-      company: "Simetria Brasil (Aquarium Tech)",
-      role: "Desenvolvedora Front-End",
-      contractType: "CLT",
-      duration: "Novembro 2025 - Janeiro 2026",
-      description:
-        "Desenvolvimento de várias landing pages internas para a própria empresa e geração de leeds, e externa para clientes que contratam os serviços da empresa. Utilização de HTML, CSS, JavaScript e Boostrap para construção de todas as páginas.",
     },
     {
       company: "WorkGeo",
@@ -237,9 +237,9 @@ export default function Home() {
                 key={index}
                 onClick={() => setSelectedExperience(index)}
                 className={`
-          relative text-left px-4 py-2 text-sm transition cursor-pointer
-          ${selectedExperience === index ? "text-yellow-600" : "text-white/80"}
-        `}
+                  relative text-left px-4 py-2 transition cursor-pointer
+                  ${selectedExperience === index ? "text-yellow-600" : "text-white/80"}
+                `}
               >
                 {selectedExperience === index && (
                   <span className="absolute left-0 top-0 h-full w-[2px] bg-yellow-600" />
@@ -253,21 +253,21 @@ export default function Home() {
           {/* CONTEÚDO */}
           <div className="w-full rounded-lg ">
             <div className="flex items-center gap-3">
-              <h4 className="text-xl font-semibold">
+              <h4 className="text-2xl font-semibold">
                 {experiences[selectedExperience].role}
               </h4>
 
-              <span className="text-xs px-2 py-1 rounded-full bg-yellow-600/20 text-yellow-500">
+              <span className="text-sm px-2 py-1 rounded-full bg-yellow-600/20 text-yellow-500">
                 {experiences[selectedExperience].contractType}
               </span>
             </div>
 
-            <span className="text-sm text-white/60 block mt-1">
+            <span className="text- text-white/60 block mt-1">
               {experiences[selectedExperience].company} •{" "}
               {experiences[selectedExperience].duration}
             </span>
 
-            <p className="text-sm mt-4 text-white/80 leading-relaxed">
+            <p className="mt-4 text-white/85 leading-relaxed">
               {experiences[selectedExperience].description}
             </p>
           </div>
