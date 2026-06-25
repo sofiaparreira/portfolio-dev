@@ -122,7 +122,7 @@ export default function Initial() {
 
         {/* Content */}
         <div
-          className="relative w-full max-w-6xl mx-auto px-6 py-24 md:grid grid-cols-2 items-center gap-16"
+          className="relative w-full max-w-7xl mx-auto px-6 py-24 md:grid grid-cols-2 items-center gap-16"
           style={{ zIndex: 1 }}
         >
           {/* Left */}
