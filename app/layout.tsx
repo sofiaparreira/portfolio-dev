@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, DM_Sans } from "next/font/google";
+import { Poppins, DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -12,6 +12,12 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--font-body",
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  variable: "--font-jakarta",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body
-        className={`${poppins.variable} ${dmSans.variable} antialiased bg-black text-white`}
+        className={`${poppins.variable} ${dmSans.variable} ${plusJakarta.variable} antialiased bg-black text-white`}
       >
         {children}
       </body>

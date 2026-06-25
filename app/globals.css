@@ -1,56 +1,59 @@
-@import "tailwindcss";
+  @import "tailwindcss";
 
-:root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --font-title: 'Poppins';
-  --font-body: 'DM Sans';
-}
-
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-}
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #CA8A04;
+    --primary-hover: #B87D04;
+    --font-title: 'Plus Jakarta Sans';
+    --font-body: 'DM Sans';
+  }
 
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-}
+  @theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+    --color-primary-hover: var(--primary-hover);
+  }
 
-@layer base {
+
   body {
-    font-family: var(--font-body), system-ui, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
   }
 
-  h1, h2, h3 {
-    font-family: var(--font-title), system-ui, sans-serif;
+  @layer base {
+    body {
+      font-family: var(--font-body), system-ui, sans-serif;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-title), system-ui, sans-serif;
+    }
   }
-}
 
-html {
-  scroll-behavior: smooth;
-}
-
-
-
-@keyframes scrollIndicator {
-  0% {
-    transform: translateY(0);
-    opacity: 0.6;
+  html {
+    scroll-behavior: smooth;
   }
-  50% {
-    transform: translateY(8px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 0.6;
-  }
-}
 
-.animate-scroll-indicator {
-  animation: scrollIndicator 1.8s ease-in-out infinite;
-}
+
+
+  @keyframes scrollIndicator {
+    0% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(8px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+  }
+
+  .animate-scroll-indicator {
+    animation: scrollIndicator 1.8s ease-in-out infinite;
+  }

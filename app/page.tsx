@@ -1,200 +1,128 @@
-
 "use client";
-import { useEffect, useRef } from 'react';
-import Navbar from './components/Navbar';
-import Image from 'next/image';
-import { RiTableFill } from 'react-icons/ri';
-import { HiOutlineDownload } from 'react-icons/hi';
-import { AiFillCode } from 'react-icons/ai';
-import { SlMouse } from 'react-icons/sl';
-import Title from './components/Title';
-import CardSkills from './components/CardSkills';
-import { useState } from 'react';
-import CardProject from './components/CardProject';
-import { FaEnvelope, FaPhone } from 'react-icons/fa';
-import Link from 'next/link';
-interface Trail {
-  x: string;
-  y: string;
-  opacity: number;
-  timestamp: number;
-}
+import { useEffect, useRef } from "react";
+import Navbar from "./components/Navbar";
+import { RiTableFill } from "react-icons/ri";
+import Title from "./components/Title";
+import CardSkills from "./components/ui/CardSkills";
+import { useState } from "react";
+import CardProject from "./components/ui/CardProject";
+import Initial from "./components/sections/Initial";
+
+
 
 export default function Home() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    let trails: Trail[] = [];
-    let animationFrameId: number;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = section.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-      section.style.setProperty('--mouse-x', `${x}%`);
-      section.style.setProperty('--mouse-y', `${y}%`);
-
-      // Adiciona novo rastro
-      trails.push({
-        x: `${x}%`,
-        y: `${y}%`,
-        opacity: 0.03,
-        timestamp: Date.now()
-      });
-
-      // Limita o número de rastros
-      if (trails.length > 20) {
-        trails.shift();
-      }
-    };
-
-    const updateTrails = () => {
-      const now = Date.now();
-
-      // Atualiza opacidade dos rastros
-      trails = trails.filter(trail => {
-        const age = now - trail.timestamp;
-        if (age > 800) return false; // Remove após 800ms
-
-        trail.opacity = 0.03 * (1 - age / 800);
-        return true;
-      });
-
-      // Aplica os rastros como gradientes múltiplos
-      if (trails.length > 0) {
-        const gradients = trails.map(trail =>
-          `radial-gradient(10px circle at ${trail.x} ${trail.y}, rgba(250, 204, 21, ${trail.opacity}), transparent 30%)`
-        ).join(', ');
-
-        section.style.setProperty('--trail-gradients', gradients);
-      }
-
-      animationFrameId = requestAnimationFrame(updateTrails);
-    };
-
-    section.addEventListener('mousemove', handleMouseMove);
-    updateTrails();
-
-    return () => {
-      section.removeEventListener('mousemove', handleMouseMove);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-
-
+ 
 
   const skillsFront = [
-    { image: '/skills/next.svg', skillName: 'Next JS' },
-    { image: '/skills/react.svg', skillName: 'React JS' },
-        { image: '/skills/react.svg', skillName: 'React Native' },
+    { image: "/skills/next.svg", skillName: "Next JS" },
+    { image: "/skills/react.svg", skillName: "React JS" },
+    { image: "/skills/react.svg", skillName: "React Native" },
 
-    { image: '/skills/vite.svg', skillName: 'Vite' },
-    { image: '/skills/angular.svg', skillName: 'Angular' },
+    { image: "/skills/vite.svg", skillName: "Vite" },
+    { image: "/skills/angular.svg", skillName: "Angular" },
 
-
-    { image: '/skills/typescript.svg', skillName: 'TypeScript' },
-    { image: '/skills/javascript.svg', skillName: 'JavaScript' },
-    { image: '/skills/html.svg', skillName: 'HTML5' },
-    { image: '/skills/css.svg', skillName: 'CSS3' },
-    { image: '/skills/tailwind.svg', skillName: 'Tailwind CSS' },
-
-  ]
+    { image: "/skills/typescript.svg", skillName: "TypeScript" },
+    { image: "/skills/javascript.svg", skillName: "JavaScript" },
+    { image: "/skills/html.svg", skillName: "HTML5" },
+    { image: "/skills/css.svg", skillName: "CSS3" },
+    { image: "/skills/tailwind.svg", skillName: "Tailwind CSS" },
+  ];
 
   const skillsBack = [
-    { image: '/skills/typescript.svg', skillName: 'TypeScript' },
-    { image: '/skills/javascript.svg', skillName: 'JavaScript' },
-    { image: '/skills/node.svg', skillName: 'Node JS' },
-  ]
+    { image: "/skills/typescript.svg", skillName: "TypeScript" },
+    { image: "/skills/javascript.svg", skillName: "JavaScript" },
+    { image: "/skills/node.svg", skillName: "Node JS" },
+  ];
 
   const skillsOthers = [
-    { image: '/skills/oracle.svg', skillName: 'Oracle' },
-    { image: '/skills/figma.png', skillName: 'Figma' },
-
-  ]
+    { image: "/skills/oracle.svg", skillName: "Oracle" },
+    { image: "/skills/figma.png", skillName: "Figma" },
+  ];
 
   const [selectedExperience, setSelectedExperience] = useState(0);
   const experiences = [
     {
-      company: 'Meu Apê Certo',
-      role: 'Desenvolvedora Front-End',
-      contractType: 'Projeto Freelancer',
-      duration: 'Jan 2025 - o momento',
+      company: "Meu Apê Certo",
+      role: "Desenvolvedora Front-End",
+      contractType: "Projeto Freelancer",
+      duration: "Jan 2025 - o momento",
       description:
-        ' Desenvolvimento de sistema web para imobiliária utilizando Next.js, TypeScript e Tailwind CSS, com integração a APIs REST e versionamento via Git. Implementação de funcionalidades CRUD para empreendimentos e imóveis, com sessões diferenciadas para clientes, incorporadoras e administradores. Desenvolvimento de filtros avançados para pesquisa de imóveis com ranking, solicitação e fluxo completo de análise de crédito e financiamento imobiliário. Construção de dashboards interativos com estatísticas de imóveis, empreendimentos e leads de usuários, gerenciamento de planos e pagamentos, gerenciamento de usuários, responsividade do site completo, entre outros. Responsável também por parte do web design do sistema.',
+        " Desenvolvimento de sistema web para imobiliária utilizando Next.js, TypeScript e Tailwind CSS, com integração a APIs REST e versionamento via Git. Implementação de funcionalidades CRUD para empreendimentos e imóveis, com sessões diferenciadas para clientes, incorporadoras e administradores. Desenvolvimento de filtros avançados para pesquisa de imóveis com ranking, solicitação e fluxo completo de análise de crédito e financiamento imobiliário. Construção de dashboards interativos com estatísticas de imóveis, empreendimentos e leads de usuários, gerenciamento de planos e pagamentos, gerenciamento de usuários, responsividade do site completo, entre outros. Responsável também por parte do web design do sistema.",
     },
     {
-      company: 'Simetria Brasil (Aquarium Tech)',
-      role: 'Desenvolvedora Front-End',
-      contractType: 'CLT',
-      duration: 'Novembro 2025 - Janeiro 2026',
+      company: "Simetria Brasil (Aquarium Tech)",
+      role: "Desenvolvedora Front-End",
+      contractType: "CLT",
+      duration: "Novembro 2025 - Janeiro 2026",
       description:
-        'Desenvolvimento de várias landing pages internas para a própria empresa e geração de leeds, e externa para clientes que contratam os serviços da empresa. Utilização de HTML, CSS, JavaScript e Boostrap para construção de todas as páginas.',
+        "Desenvolvimento de várias landing pages internas para a própria empresa e geração de leeds, e externa para clientes que contratam os serviços da empresa. Utilização de HTML, CSS, JavaScript e Boostrap para construção de todas as páginas.",
     },
     {
-      company: 'WorkGeo',
-      role: 'Desenvolvedora Full Stack',
-      contractType: 'Estágio',
-      duration: 'Jun 2024 - Mar 2025',
+      company: "WorkGeo",
+      role: "Desenvolvedora Full Stack",
+      contractType: "Estágio",
+      duration: "Jun 2024 - Mar 2025",
       description:
-        'Desenvolvimento do site institucional da empresa, criação de soluções de software para otimização de processosinternos da empresa, desenvolvimento de uma agenda web para gestão de atividades e eventos da empresa.',
+        "Desenvolvimento do site institucional da empresa, criação de soluções de software para otimização de processosinternos da empresa, desenvolvimento de uma agenda web para gestão de atividades e eventos da empresa.",
     },
     {
-      company: 'Info Brasil Express',
-      role: 'Técnica de TI',
-      contractType: 'Estágio',
-      duration: 'Jan 2024 - Jun 2024',
+      company: "Info Brasil Express",
+      role: "Técnica de TI",
+      contractType: "Estágio",
+      duration: "Jan 2024 - Jun 2024",
       description:
-        'Técnica de suporte em TI, responsável pela manutenção de computadores, instalação e configuração de softwares, atendimento ao cliente, suporte remoto e vendas.',
+        "Técnica de suporte em TI, responsável pela manutenção de computadores, instalação e configuração de softwares, atendimento ao cliente, suporte remoto e vendas.",
     },
   ];
-
 
   const projects = [
     {
       title: "Meu Apê Certo",
-      description: "Sistema de imobiliária na qual fui responsável pelo front-end e parte do web design, com dashboards e funcionalidades para administradores, incorporadoras e clientes.",
+      description:
+        "Sistema de imobiliária na qual fui responsável pelo front-end e parte do web design, com dashboards e funcionalidades para administradores, incorporadoras e clientes.",
       imageSrc: "/projects/meuape.png",
       technologies: ["Next JS", "TypeScript", "Tailwind"],
-      linkDeploy: "https://app.meuapecerto.com.br"
+      linkDeploy: "https://app.meuapecerto.com.br",
     },
-    
+
     {
       title: "Kanban",
-      description: "Fiz um sistema de gerenciamento de tarefas no estilo Kanban.",
+      description:
+        "Fiz um sistema de gerenciamento de tarefas no estilo Kanban.",
       imageSrc: "/projects/kanban.jpg",
       technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
       linkDeploy: "https://kanban-chi-nine.vercel.app",
-      linkRepository: "https://github.com/sofiaparreira/Kanban"
+      linkRepository: "https://github.com/sofiaparreira/Kanban",
     },
     {
       title: "Logística de Transporte por drones",
-      description: "Projeto desenvolvido para um processo seletivo, no qual criei uma solução de logística de transporte utilizando drones. O sistema tem voo em tempo real, entrega de pacotes, gestão de drones, otimização de rotas e simuação de bateria. Fui responsável pelo Back-End e Front-End.",
+      description:
+        "Projeto desenvolvido para um processo seletivo, no qual criei uma solução de logística de transporte utilizando drones. O sistema tem voo em tempo real, entrega de pacotes, gestão de drones, otimização de rotas e simuação de bateria. Fui responsável pelo Back-End e Front-End.",
       imageSrc: "/projects/drone.png",
       technologies: ["React", "CSS", "JavaScript", "Tailwind"],
       linkRepository: "https://github.com/sofiaparreira/api-encomendas-drone",
     },
     {
       title: "Fokus",
-      description: "Aplicativo desenvolvido em um curso da Alura. O Fokus é um aplicativo de foco e produtividade com método pomodoro.",
+      description:
+        "Aplicativo desenvolvido em um curso da Alura. O Fokus é um aplicativo de foco e produtividade com método pomodoro.",
       imageSrc: "/projects/fokus.png",
       technologies: ["React Native", "StyleSheet", "JavaScript", "Expo"],
       linkRepository: "https://github.com/sofiaparreira/app-fokus",
     },
     {
       title: "Animação Shell Sort",
-      description: "Animação desenvolvida para um trabalho acadêmico, com o objetivo de demonstrar visualmente o funcionamento do método de ordenação Shell Sort, facilitando o entendimento do algoritmo e suas etapas.",
+      description:
+        "Animação desenvolvida para um trabalho acadêmico, com o objetivo de demonstrar visualmente o funcionamento do método de ordenação Shell Sort, facilitando o entendimento do algoritmo e suas etapas.",
       imageSrc: "/projects/shellsort.jpg",
       technologies: ["HTML", "CSS", "JavaScript", "Tailwind"],
       linkRepository: "https://github.com/sofiaparreira/visualizador-shellsort",
-      linkDeploy: "https://visualizador-shellsort.vercel.app"
+      linkDeploy: "https://visualizador-shellsort.vercel.app",
     },
     {
       title: "Axyun Capital",
-      description: "Site institucional para empresa de investimentos Axyun Capital. Projeto desenvolvido por mim utilizando HTML, CSS, JavaScript e Bootstrap.",
+      description:
+        "Site institucional para empresa de investimentos Axyun Capital. Projeto desenvolvido por mim utilizando HTML, CSS, JavaScript e Bootstrap.",
       imageSrc: "/projects/axyun.jpg",
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       linkDeploy: "https://axyuncapital.com.br",
@@ -204,147 +132,17 @@ export default function Home() {
     <main className="">
       <Navbar />
 
-      <section id='inicio'
-        ref={sectionRef}
-        className="relative overflow-hidden h-screen flex flex-col items-center justify-center"
-      >
-
-        {/* Brilho */}
-        <div
-          style={{
-            content: '',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            background: `radial-gradient(750px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(250, 204, 21, 0.2), transparent 60%)`,
-            pointerEvents: 'none',
-            zIndex: 0,
-            opacity: 1,
-            filter: 'blur(40px)'
-          }}
-        />
-
-        <div className="container mx-auto md:grid grid-cols-2 items-center justify-center gap-16 px-6" style={{ position: 'relative', zIndex: 1 }}>
-          <div>
-            <h1 className="text-4xl font-bold">Sofia Parreira Passos</h1>
-            <h2 className="uppercase text-sm font-medium">Desenvolvedora Full Stack</h2>
-            <div className="flex gap-3"></div>
-            <p className="text-sm mt-8">
-              Sou desenvolvedora Full Stack com foco em Front-end, com 2 anos de experiência em desenvolvimento web.
-              Busco oportunidades como desenvolvedora júnior Front-end ou Back-end, ou estágios.
-              Sou formada no ensino médio técnico pelo COTEMIG e atualmente curso o 4º período de Ciências da Computação na mesma instituição.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-6 mt-6">
-              <a
-                href="https://wa.me/5531999050065"
-                title="Link WhatsApp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-      group inline-flex items-center gap-3
-      text-white/80
-      transition-all duration-300
-      hover:text-yellow-500
-    "
-              >
-                <span className="
-      flex items-center justify-center
-      w-9 h-9 rounded-full
-      bg-yellow-600/10 border border-yellow-600/20
-      transition-all duration-300
-      group-hover:bg-yellow-600
-      group-hover:text-black
-      group-hover:rotate-12
-    ">
-                  <FaPhone className="rotate-90 text-sm" />
-                </span>
-
-                <span className="relative">
-                  (31) 99905-0065
-                  <span className="
-        absolute left-0 -bottom-1
-        w-0 h-[2px]
-        bg-yellow-600
-        transition-all duration-300
-        group-hover:w-full
-      " />
-                </span>
-              </a>
-
-              <a
-                href="mailto:sofiapparreira@gmail.com"
-                title="Link Email"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-      group inline-flex items-center gap-3
-      text-white/80
-      transition-all duration-300
-      hover:text-yellow-500
-    "
-              >
-                <span className="
-      flex items-center justify-center
-      w-9 h-9 rounded-full
-      bg-yellow-600/10 border border-yellow-600/20
-      transition-all duration-300
-      group-hover:bg-yellow-600
-      group-hover:text-black
-      group-hover:-rotate-6
-    ">
-                  <FaEnvelope className="text-sm" />
-                </span>
-
-                <span className="relative">
-                  sofiapparreira@gmail.com
-                  <span className="
-        absolute left-0 -bottom-1
-        w-0 h-[2px]
-        bg-yellow-600
-        transition-all duration-300
-        group-hover:w-full
-      " />
-                </span>
-              </a>
-            </div>
-
-
-            <div className="flex mt-8 gap-3">
-              <Link href={'/curriculo_sofia_passos.pdf'} target='_blank' className="bg-yellow-600 text-white rounded-full px-8 py-2.5 text-sm font-medium
-                  hover:bg-yellow-700 transition-colors
-                  shadow-[0_0_40px_rgba(250,204,21,0.25)] cursor-pointer flex items-center gap-2">
-                Currículo
-                <HiOutlineDownload className='text-xl' />
-
-              </Link>
-              <Link href={'#projetos'} className='border border-yellow-600/20 text-[#eebe39] bg-yellow-600/10 rounded-full px-8 py-2.5 text-sm font-medium flex gap-2 items-center'>Ver Projetos <AiFillCode className='text-xl' />
-              </Link>
-
-            </div>
-          </div>
-
-          <Image src="/banner.svg" alt="Foto de Sofia Parreira Passos" width={400} height={400} className="rounded-lg mx-auto max-md:hidden" />
-        </div>
-
-        <div className="absolute bottom-12 flex flex-col items-center gap-1 text-white/70">
-          <SlMouse className="text-2xl" />
-          <span className="w-1 h-2 rounded-full bg-white/60 animate-scroll-dot" />
-        </div>
-
-      </section>
+    <Initial/>
 
       {/* --- HABILIDADES --- */}
-      <section id='habilidades' className="relative container mx-auto md:py-16 py-8 px-4">
-
-
+      <section
+        id="habilidades"
+        className="relative max-w-7xl mx-auto md:py-16 py-8 px-4"
+      >
         <div className="relative z-10">
           <Title title="Habilidades" />
 
           <div className="md:grid grid-cols-2 max-md:flex max-md:flex-col gap-8">
-
             <div className="col-span-2 relative bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 overflow-hidden">
               <div className="relative z-10">
                 <div className="flex gap-4 items-center mb-5">
@@ -357,12 +155,15 @@ export default function Home() {
                   <h4 className="font-medium text-white">Front-End</h4>
                 </div>
 
-
-
                 <div className="grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-4">
-                  {skillsFront.length > 0 && skillsFront.map((sk) => (
-                    <CardSkills key={sk.skillName} image={sk.image} skillName={sk.skillName} />
-                  ))}
+                  {skillsFront.length > 0 &&
+                    skillsFront.map((sk) => (
+                      <CardSkills
+                        key={sk.skillName}
+                        image={sk.image}
+                        skillName={sk.skillName}
+                      />
+                    ))}
                 </div>
               </div>
             </div>
@@ -379,12 +180,15 @@ export default function Home() {
                   <h4 className="font-medium text-white">Back-End</h4>
                 </div>
 
-
-
                 <div className="grid lg:grid-cols-3 grid-cols-2 gap-4">
-                  {skillsBack.length > 0 && skillsBack.map((sk) => (
-                    <CardSkills key={sk.skillName} image={sk.image} skillName={sk.skillName} />
-                  ))}
+                  {skillsBack.length > 0 &&
+                    skillsBack.map((sk) => (
+                      <CardSkills
+                        key={sk.skillName}
+                        image={sk.image}
+                        skillName={sk.skillName}
+                      />
+                    ))}
                 </div>
               </div>
             </div>
@@ -399,15 +203,17 @@ export default function Home() {
                   </div>
 
                   <h4 className="font-medium text-white">Outros</h4>
-
-
-
                 </div>
 
                 <div className="grid lg:grid-cols-3 grid-cols-2 gap-4">
-                  {skillsOthers.length > 0 && skillsOthers.map((sk) => (
-                    <CardSkills key={sk.skillName} image={sk.image} skillName={sk.skillName} />
-                  ))}
+                  {skillsOthers.length > 0 &&
+                    skillsOthers.map((sk) => (
+                      <CardSkills
+                        key={sk.skillName}
+                        image={sk.image}
+                        skillName={sk.skillName}
+                      />
+                    ))}
                 </div>
               </div>
             </div>
@@ -417,7 +223,10 @@ export default function Home() {
 
       {/* ----- EXPERIENCIAS PROFISSIONAIS ----- */}
 
-      <section id='experiencias' className="container mx-auto md:py-16 py-8 px-4">
+      <section
+        id="experiencias"
+        className="max-w-7xl mx-auto md:py-16 py-8 px-4"
+      >
         <Title title="Experiências Profissionais" />
 
         <div className="flex max-md:flex-col md:gap-16 gap-8 mt-10">
@@ -429,10 +238,7 @@ export default function Home() {
                 onClick={() => setSelectedExperience(index)}
                 className={`
           relative text-left px-4 py-2 text-sm transition cursor-pointer
-          ${selectedExperience === index
-                    ? 'text-yellow-600'
-                    : 'text-white/80'
-                  }
+          ${selectedExperience === index ? "text-yellow-600" : "text-white/80"}
         `}
               >
                 {selectedExperience === index && (
@@ -457,7 +263,7 @@ export default function Home() {
             </div>
 
             <span className="text-sm text-white/60 block mt-1">
-              {experiences[selectedExperience].company} •{' '}
+              {experiences[selectedExperience].company} •{" "}
               {experiences[selectedExperience].duration}
             </span>
 
@@ -465,12 +271,11 @@ export default function Home() {
               {experiences[selectedExperience].description}
             </p>
           </div>
-
         </div>
       </section>
 
-      <section id='projetos' className='container mx-auto py-16'>
-        <Title title='Projetos' />
+      <section id="projetos" className="max-w-7xl mx-auto py-16">
+        <Title title="Projetos" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -486,7 +291,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
 
       <div className="fixed bottom-8 left-8 flex flex-col gap-4 z-50">
         <a
