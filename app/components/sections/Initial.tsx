@@ -6,7 +6,7 @@ import { SlMouse } from "react-icons/sl";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
-import { BtnPrimary } from "../ui/btnPrimary";
+import { BtnPrimary } from "../ui/BtnPrimary";
 import { BtnSecondary } from "../ui/BtnSecondary";
 
 interface Trail {
@@ -86,48 +86,6 @@ export default function Initial() {
 
         .hero-content { animation: fadeIn .6s ease both .08s; }
         .hero-image   { animation: fadeIn .6s ease both .2s; }
-
- 
-
-        .btn-primary {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          padding: 0 32px;
-          height: 48px;
-          border-radius: 9999px;
-          background: #ca8a04;
-          color: #fff;
-          font-weight: 500;
-          font-size: .9rem;
-          text-decoration: none;
-          transition: background .2s, box-shadow .2s;
-          box-shadow: 0 0 40px rgba(202,138,4,0.25);
-          cursor: pointer;
-        }
-        .btn-primary:hover {
-          background: #a16207;
-        }
-
-        .btn-secondary {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          padding: 0 32px;
-          height: 48px;
-          border-radius: 9999px;
-          background: rgba(202,138,4,0.1);
-          color: #eebe39;
-          font-weight: 500;
-          font-size: .9rem;
-          text-decoration: none;
-          border: 1px solid rgba(202,138,4,0.2);
-          transition: background .2s, border-color .2s;
-        }
-        .btn-secondary:hover {
-          background: rgba(202,138,4,0.18);
-          border-color: rgba(202,138,4,0.4);
-        }
 
         .scroll-hint {
           display: flex;
