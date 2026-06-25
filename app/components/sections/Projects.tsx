@@ -8,10 +8,16 @@ export const Projects = () => {
       description:
         "Sistema de imobiliária na qual fui responsável pelo front-end e parte do web design, com dashboards e funcionalidades para administradores, incorporadoras e clientes.",
       imageSrc: "/projects/meuape.png",
-      technologies: ["Next JS", "TypeScript", "Tailwind"],
+      technologies: ["Next JS", "TypeScript", "Tailwind", 'Figma'],
       linkDeploy: "https://app.meuapecerto.com.br",
     },
-
+    {
+      title: 'Sonoro Despertar',
+      description: 'Desenvolvimento do website do projeto social Sonoro Despertar, voltado ao ensino de flauta para crianças em situação de vulnerabilidade social. Fui responsável pela criação da identidade visual e design da interface no Figma, além do desenvolvimento do front-end utilizando Next.js e TypeScript',
+      imageSrc: 'projects/sonoro.png',
+      technologies: ['Next JS', 'TypeScript', 'Tailwind', 'Figma'],
+      linkDeploy: 'https://sonorodespertar.org.br',
+    },
     {
       title: "Kanban",
       description:
@@ -29,13 +35,13 @@ export const Projects = () => {
       technologies: ["React", "CSS", "JavaScript", "Tailwind"],
       linkRepository: "https://github.com/sofiaparreira/api-encomendas-drone",
     },
-    {
-      title: "Fokus",
+      {
+      title: "Axyun Capital",
       description:
-        "Aplicativo desenvolvido em um curso da Alura. O Fokus é um aplicativo de foco e produtividade com método pomodoro.",
-      imageSrc: "/projects/fokus.png",
-      technologies: ["React Native", "StyleSheet", "JavaScript", "Expo"],
-      linkRepository: "https://github.com/sofiaparreira/app-fokus",
+        "Site institucional para empresa de investimentos Axyun Capital. Projeto desenvolvido por mim utilizando HTML, CSS, JavaScript e Bootstrap.",
+      imageSrc: "/projects/axyun.jpg",
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      linkDeploy: "https://axyuncapital.com.br",
     },
     {
       title: "Animação Shell Sort",
@@ -46,13 +52,13 @@ export const Projects = () => {
       linkRepository: "https://github.com/sofiaparreira/visualizador-shellsort",
       linkDeploy: "https://visualizador-shellsort.vercel.app",
     },
-    {
-      title: "Axyun Capital",
+        {
+      title: "Fokus",
       description:
-        "Site institucional para empresa de investimentos Axyun Capital. Projeto desenvolvido por mim utilizando HTML, CSS, JavaScript e Bootstrap.",
-      imageSrc: "/projects/axyun.jpg",
-      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-      linkDeploy: "https://axyuncapital.com.br",
+        "Aplicativo desenvolvido em um curso da Alura. O Fokus é um aplicativo de foco e produtividade com método pomodoro.",
+      imageSrc: "/projects/fokus.png",
+      technologies: ["React Native", "StyleSheet", "JavaScript", "Expo"],
+      linkRepository: "https://github.com/sofiaparreira/app-fokus",
     },
   ];
 
@@ -60,7 +66,7 @@ export const Projects = () => {
     <section id="projetos" className="max-w-7xl mx-auto py-16">
       <Title title="Projetos" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 3xl:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <CardProject
             key={index}

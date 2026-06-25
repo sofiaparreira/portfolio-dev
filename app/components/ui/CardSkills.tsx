@@ -8,7 +8,7 @@ interface CardSkillsProps {
 
 const CardSkills:React.FC<CardSkillsProps> = ({ image, skillName }) => {
   return (
- <div className="group relative px-4 py-2 bg-gradient-to-br from-zinc-900/50 to-zinc-950/50 backdrop-blur-sm rounded-xl border border-white/5 hover:border-yellow-600/30 transition-all duration-300 hover:-translate-y-1">
+ <div className="group relative px-4 py-2 bg-gradient-to-br from-zinc-900/50 to-zinc-950/50 backdrop-blur-sm rounded-xl border border-white/5 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
       <div className="flex items-center gap-3">
         <img
           src={image}
@@ -20,7 +20,7 @@ const CardSkills:React.FC<CardSkillsProps> = ({ image, skillName }) => {
       
       {/* Efeito de brilho ao hover */}
       <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-600/5 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
       </div>
     </div>
   );

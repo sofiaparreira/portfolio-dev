@@ -64,16 +64,16 @@ export const WorkExperiences = () => {
                 className={`
                   relative text-left px-5 py-3 transition-all duration-200 cursor-pointer rounded-r-lg group
                   ${isActive
-                    ? "text-yellow-500 bg-yellow-600/[0.06]"
+                    ? "text-primary bg-primary/[0.06]"
                     : "text-white/50 hover:text-white/80 hover:bg-white/[0.03]"
                   }
                 `}
               >
                 {isActive && (
-                  <span className="absolute left-0 top-0 h-full w-[2px] bg-yellow-500 rounded-r-full" />
+                  <span className="absolute left-0 top-0 h-full w-[2px] bg-primary rounded-r-full" />
                 )}
                 <span className="block text-sm font-medium">{item.company}</span>
-                <span className={`block text-xs mt-0.5 transition-colors duration-200 ${isActive ? "text-yellow-600/60" : "text-white/30 group-hover:text-white/40"}`}>
+                <span className={`block text-xs mt-0.5 transition-colors duration-200 ${isActive ? "text-primary/60" : "text-white/30 group-hover:text-white/40"}`}>
                   {item.contractType}
                 </span>
               </button>
@@ -84,8 +84,8 @@ export const WorkExperiences = () => {
         {/* CONTEÚDO */}
         <div className="w-full">
           <div className="flex flex-wrap items-center gap-3 mb-1">
-            <h4 className="text-xl font-semibold text-white">{exp.role}</h4>
-            <span className="text-xs px-2.5 py-1 rounded-full bg-yellow-600/15 border border-yellow-600/20 text-yellow-500 font-medium">
+            <h4 className="text-xl font-medium text-white">{exp.role}</h4>
+            <span className="text-xs px-2.5 py-1 rounded-full bg-primary/15 border border-primary/20 text-primary font-medium">
               {exp.contractType}
             </span>
           </div>
