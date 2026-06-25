@@ -166,7 +166,7 @@ export default function Initial() {
             <p className="max-w-lg text-white/90 leading-[1.6] m-0">
               Sou desenvolvedora Full Stack com foco em Front-end, com 2 anos de
               experiência em desenvolvimento web. Formada no ensino médio técnico
-              pelo COTEMIG e cursando o 4º período de Ciências da Computação na
+              pelo COTEMIG e cursando o 5º período de Ciências da Computação na
               mesma instituição. 
             </p>
 

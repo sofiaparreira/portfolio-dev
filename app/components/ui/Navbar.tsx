@@ -1,4 +1,4 @@
-import styles from "../navbar.module.css";
+import styles from "../../navbar.module.css";
 
 const Navbar = () => {
   const scrollToSection = (id: string) => {
