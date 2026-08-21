@@ -19,6 +19,22 @@ export const Projects = () => {
       linkDeploy: 'https://sonorodespertar.org.br',
     },
     {
+      title: "Logística de Transporte por drones",
+      description:
+        "Projeto desenvolvido para um processo seletivo, no qual criei uma solução de logística de transporte utilizando drones. O sistema tem voo em tempo real, entrega de pacotes, gestão de drones, otimização de rotas e simuação de bateria. Fui responsável pelo Back-End e Front-End.",
+      imageSrc: "/projects/drone.png",
+      technologies: ["React", "CSS", "JavaScript", "Tailwind"],
+      linkRepository: "https://github.com/sofiaparreira/api-encomendas-drone",
+    },
+    {
+      title: "Venn Teaser Page",
+      description: "Teaser Page desenvolvida para apresentar e divulgar uma plataforma completa de gestão de TCCs, destacando suas principais funcionalidades e proposta de valor.",
+      imageSrc: "/projects/venn-project.png",
+      technologies: ["Next.js", "Supabse", "Tailwind"],
+      linkDeploy: "https://venn-teaserpage.vercel.app",
+      linkRepository: "https://github.com/TCC-HUB-Venn/venn-teaserpage"
+    },
+    {
       title: "Kanban",
       description:
         "Fiz um sistema de gerenciamento de tarefas no estilo Kanban.",
@@ -28,14 +44,6 @@ export const Projects = () => {
       linkRepository: "https://github.com/sofiaparreira/Kanban",
     },
     {
-      title: "Logística de Transporte por drones",
-      description:
-        "Projeto desenvolvido para um processo seletivo, no qual criei uma solução de logística de transporte utilizando drones. O sistema tem voo em tempo real, entrega de pacotes, gestão de drones, otimização de rotas e simuação de bateria. Fui responsável pelo Back-End e Front-End.",
-      imageSrc: "/projects/drone.png",
-      technologies: ["React", "CSS", "JavaScript", "Tailwind"],
-      linkRepository: "https://github.com/sofiaparreira/api-encomendas-drone",
-    },
-      {
       title: "Axyun Capital",
       description:
         "Site institucional para empresa de investimentos Axyun Capital. Projeto desenvolvido por mim utilizando HTML, CSS, JavaScript e Bootstrap.",
